@@ -1,0 +1,15 @@
+.carousel-item img{
+    height: 60vh;
+    border-radius: 1%;
+}
+.starability-result{
+    margin-left: 0px;
+    transform: scale(0.7) translateX(-33px);
+}
+.text-muted{
+    font-size: 0.9rem;
+}
+.not-logged-review{
+    border:1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}

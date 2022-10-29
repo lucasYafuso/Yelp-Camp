@@ -1,0 +1,45 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand p-0">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/campgrounds">Campgrounds</a>
+                <a class="nav-link" href="/campgrounds/new">Post</a>
+            </div>
+
+
+
+
+            <div class="navbar-nav ms-auto">
+                <% if (!currentUser) { %>
+                    <a href="/login" class="nav-link">Login</a>
+                    <a href="/register" class="nav-link">Register</a>
+                    <% } else{ %>
+                        <a href="/logout" class="nav-link">Logout</a>
+                        <div class="nav-link">
+                            <%= currentUser.username %>
+                        </div>
+
+                        <% } %>
+                            <form class="d-flex needs-validation my-1" novalidate role="search" action="/campgrounds">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                                    name="campQuery" required>
+                                <button class="btn btn-outline-success" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </button>
+                            </form>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
